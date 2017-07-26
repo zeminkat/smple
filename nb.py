@@ -79,8 +79,6 @@ with open("dosya/logger.txt","r+") as dosya:
                  jargon = veri.split("\n")
                  print(jargon)
                  sayy = input(str("Numara gir"))
-                 print(str(len(jargon)))
-                 hsdf = input("sdsdsd")
                  i = 0
                  while i < len(jargon):
                      if sayy in jargon[i]:
@@ -91,48 +89,68 @@ with open("dosya/logger.txt","r+") as dosya:
                         Doğum tarihi güncellemek için 4
                         >>>"""))
                         if hangisi=="1":
-                            ad=input(str("Yeni İsmi Girin:>>"))
-                            komodor=jargon[i]##NOT DEFTERİ GÜNCELLEMESİ OLDUĞU İÇİN JARGON[İ] SİLİNEREK TAŞIYICI EKLNECEK!!
-                            jargon.pop(i)##gÜNCELLEME İŞLEMİ İÇİN JARGON AKTARILIP YOK EDİLİYOR ARDINDAN YENİ EKLENECEK
-                            komodor=komodor.split(" ")#KOMODOR ÜZERİNDEN İŞLEMLER YAPILIYOR
-                            komodor[1]=ad
-                            komodor=" ".join(komodor)
-                            jargon[i]=komodor
-                            for i in range(len(jargon)):#Jargondaki güncellemelerden sonra tüm---
-                                jargon[i] += "\n" ##########    verinin tek satırda toplanmasını engelliyoruz
 
+                            ad = input(str("Yeni Adı Girin:>>"))
+                            komodor = jargon[i]
+                            jargon[i] = ""
+                            komodor = komodor.split(" ")
+                            komodor[1] = ad
+                            komodor = " ".join(komodor)
+                            print(jargon)
+                            jargon[i] = komodor
+                            print(jargon)
+                            for i in range(len(jargon)):
+                                if jargon[i] == "":
+                                    continue
+                                else:
+                                    jargon[i] += "\n"
                         elif hangisi=="2":
                             soyad=input(str("Yeni Soyadı Girin:>>"))
                             komodor=jargon[i]
-                            jargon.pop(i)
+                            jargon[i]=""
                             komodor=komodor.split(" ")
                             komodor[2]=soyad
                             komodor=" ".join(komodor)
+                            print(jargon)
                             jargon[i]=komodor
+                            print(jargon)
                             for i in range(len(jargon)):
-                                jargon[i] += "\n"
+                                if jargon[i]=="":
+                                    continue
+                                else:
+                                    jargon[i]+="\n"
 
                         elif hangisi=="3":
-                            telefon=input(str("Yeni telefon numarasını Girin:>>"))
-                            komodor=jargon[i]
-                            jargon.pop(i)
-                            komodor=komodor.split(" ")
-                            komodor[3]=telefon
-                            komodor=" ".join(komodor)
-                            jargon[i]=komodor
+                            telefon = input(str("Yeni Telefon Numarası Girin:>>"))
+                            komodor = jargon[i]
+                            jargon[i] = ""
+                            komodor = komodor.split(" ")
+                            komodor[3] = telefon
+                            komodor = " ".join(komodor)
+                            print(jargon)
+                            jargon[i] = komodor
+                            print(jargon)
                             for i in range(len(jargon)):
-                                jargon[i] += "\n"
+                                if jargon[i] == "":
+                                    continue
+                                else:
+                                    jargon[i] += "\n"
 
                         elif hangisi=="4":
-                            dogum=input(str("Yeni Soyadı Girin:>>"))
-                            komodor=jargon[i]
-                            jargon.pop(i)
-                            komodor=komodor.split(" ")
-                            komodor[4]=dogum
-                            komodor=" ".join(komodor)
-                            jargon[i]=komodor
+                            dogum = input(str("Yeni Doğum Girin:>>"))
+                            komodor = jargon[i]
+                            jargon[i] = ""
+                            komodor = komodor.split(" ")
+                            komodor[4] = dogum
+                            komodor = " ".join(komodor)
+                            print(jargon)
+                            jargon[i] = komodor
+                            print(jargon)
                             for i in range(len(jargon)):
-                                jargon[i] += "\n"
+                                if jargon[i] == "":
+                                    continue
+                                else:
+                                    jargon[i] += "\n"
 
                         else:
                             print("Geçersiz Seçenek!!")
